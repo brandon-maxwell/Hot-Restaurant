@@ -55,6 +55,41 @@
              | 
             <a href="/api/waitlist">API Wait List</a>
         </footer>
+
+        <script type="text/javascript">
+            // const submitBtn = document.getElementById('submit-btn');
+            const nameEl = document.getElementById('name');
+            const phoneNumberEl = document.getElementById('phone');
+            const emailEl = document.getElementById('email');
+            const idEl = document.getElementById('id');
+
+                fetch(`/api/reservations/${searchedCharacter}`, {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                })
+                    .then((response) => response.json())
+                    .then((data) => {
+                        console.log(data);
+                        const { name, phone, email, id} = data;
+
+                        if (data) {
+                            nameEl.textContent = name;
+                            phoneNumberEl.textContent = phone;
+                            emailEl.textContent = email;
+                            idEl.textContent = id;
+                        } else {
+                            nameEl.textContent =
+                                "sorry we're closed";
+                        }
+                    })
+                    .catch((error) => {
+                        console.error(error);
+                    });
+            
+        </script>
+
 </body>
 
 </html>
