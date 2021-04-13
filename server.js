@@ -10,21 +10,19 @@ app.use(express.json());
 // Reservation data
 const reservations = [
   {
-    routeName: 'yoda',
-    name: 'Yoda',
-    phoneNumber: 'Jedi Master',
-    email: 900,
-    id: 2000,
+    name: 'Test',
+    phoneNumber: '5555555555',
+    email: 'test@test.com',
+    id: 'test',
   },
 ];
 // Waitlist data
 const waitlist= [
   {
-    routeName: 'yoda',
-    name: 'Yoda',
-    phoneNumber: 'Jedi Master',
-    email: 900,
-    id: 2000,
+    name: 'Test',
+    phoneNumber: '5555555555',
+    email: 'test@test.com',
+    id: 'test',
   },
 ];
 // Routes
